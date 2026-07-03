@@ -209,15 +209,16 @@ if(current>=target){
 current=target;
 clearInterval(timer);
 }
-// Formata o número final com seu símbolo correspondente
+// Formata o número final com seu símbolo correspondente, aplicando separador de milhar para números grandes
+const formattedCurrent = current >= 1000 ? current.toLocaleString('pt-BR') : current;
 if(isPercent){
-num.innerText=`${current}%`;
+num.innerText=`${formattedCurrent}%`;
 }else if(isPlus){
-num.innerText=`${current}+`;
+num.innerText=`${formattedCurrent}+`;
 }else if(target===48){//tratamento especial para liminares "48h"
-num.innerText=`${current}h`;
+num.innerText=`${formattedCurrent}h`;
 }else{
-num.innerText=current;
+num.innerText=formattedCurrent;
 }
 },stepTime);
 });
