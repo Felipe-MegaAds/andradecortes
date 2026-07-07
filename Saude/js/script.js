@@ -5,7 +5,7 @@ initHeaderScroll();
 initScrollReveal();
 initFaqAccordion();
 initCounters();
-initWhatsAppFloating();
+// O botão flutuante do WhatsApp foi removido conforme solicitação
 initCookieConsent();
 });
 function initTracking(){
@@ -224,46 +224,7 @@ num.innerText=formattedCurrent;
 });
 }
 }
-function initWhatsAppFloating(){
-const floatingWrapper=document.getElementById("wa-floating-wrapper");
-const floatingBtn=document.getElementById("wa-floating-btn");
-const chatBubble=document.getElementById("wa-chat-bubble");
-const closeBubbleBtn=document.getElementById("btn-close-wa-bubble");
-const badge=floatingBtn ? floatingBtn.querySelector(".notification-badge"):null;
-if(!floatingWrapper || !floatingBtn || !chatBubble)return;
-// Temporizador para exibir o mini-chat após 3 segundos
-const timer=setTimeout(()=>{
-// Verifica se o usuário já fechou o chat nesta sessão
-const bubbleDismissed=sessionStorage.getItem("wa_bubble_dismissed");
-if(bubbleDismissed !=="true"){
-chatBubble.classList.remove("hidden");
-if(badge)badge.classList.remove("hidden");
-}
-},3000);
-// Botão Principal abre o link direto ou alterna o balão caso no desktop
-floatingBtn.addEventListener("click",()=>{
-// Dispara evento
-window.dataLayer=window.dataLayer ||[];
-window.dataLayer.push({
-event:"whatsapp_click",
-location:"floating_button"
-});
-// Oculta a notificação badge ao interagir
-if(badge)badge.classList.add("hidden");
-// Alterna a exibição do balão de chat
-chatBubble.classList.toggle("hidden");
-});
-// Botão para fechar o balão de chat sem abrir o WhatsApp
-if(closeBubbleBtn){
-closeBubbleBtn.addEventListener("click",(e)=>{
-e.stopPropagation();//Evita clique no botão pai
-chatBubble.classList.add("hidden");
-if(badge)badge.classList.add("hidden");
-// Salva flag para não reexibir na sessão atual
-sessionStorage.setItem("wa_bubble_dismissed","true");
-});
-}
-}
+// A função initWhatsAppFloating foi removida pois o botão flutuante não é mais utilizado no site.
 function initCookieConsent(){
 const banner=document.getElementById("cookie-banner");
 const btnAccept=document.getElementById("btn-cookie-accept");
