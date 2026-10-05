@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/evento",
+      "destination": "/Evento/"
+    },
+    {
+      "source": "/evento/",
+      "destination": "/Evento/"
+    },
+    {
+      "source": "/palestra",
+      "destination": "/Evento/"
+    },
+    {
+      "source": "/palestra/",
+      "destination": "/Evento/"
+    }
+  ]
+}

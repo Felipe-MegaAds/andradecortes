@@ -29,13 +29,21 @@
     <link rel="icon" href="https://andradecortes.adv.br/lp/wp-content/uploads/2024/04/cropped-Orig-Vert-1-192x192.png" sizes="192x192">
     <link rel="apple-touch-icon" href="https://andradecortes.adv.br/lp/wp-content/uploads/2024/04/cropped-Orig-Vert-1-180x180.png">
     
+    <!-- Script de compatibilidade de rota: garante que o navegador resolva os assets a partir da subpasta /Evento/ -->
+    <script>
+        // Caso a URL seja acessada sem a barra no final (ex: /Evento ou /evento), adiciona a barra para que os assets relativos carreguem corretamente
+        if (window.location.pathname.endsWith('/Evento') || window.location.pathname.endsWith('/evento')) {
+            window.location.replace(window.location.pathname + '/' + window.location.search + window.location.hash);
+        }
+    </script>
+    
     <!-- Pré-conexão e carregamento das fontes do Google (Cinzel, Inter e Outfit) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     
     <!-- Folha de estilos dedicada da Landing Page de Palestra -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <!-- Google Tag Manager (GTM) para rastreamento de conversão em tráfego pago -->
     <script>
@@ -59,10 +67,10 @@
          ========================================================================== -->
     <header id="main-header" class="header-fixed">
         <div class="container header-container">
-            <!-- Logotipo Andrade & Côrtes Advogados Associados -->
+            <!-- Logotipo Andrade & Côrtes Advogados Associados com caminho relativo explícito -->
             <a href="#" class="logo-link" aria-label="Voltar ao início">
                 <div class="logo-wrapper">
-                    <img src="Assets/logo.webp" alt="Andrade & Côrtes Advogados Associados" class="logo-img" width="180" height="50">
+                    <img src="./Assets/logo.webp" alt="Andrade & Côrtes Advogados Associados" class="logo-img" width="180" height="50">
                 </div>
             </a>
             
@@ -650,8 +658,9 @@
         <div class="container footer-grid section-padding-sm">
             <!-- Coluna 1: Logo e Resumo Institucional -->
             <div class="footer-col footer-about">
+                <!-- Logotipo Andrade & Côrtes Advogados Associados no rodapé -->
                 <div class="logo-wrapper footer-logo">
-                    <img src="Assets/logo.webp" alt="Andrade & Côrtes Advogados Associados" class="logo-img" width="260" height="70">
+                    <img src="./Assets/logo.webp" alt="Andrade & Côrtes Advogados Associados" class="logo-img" width="260" height="70">
                 </div>
                 <p class="footer-desc">
                     Sociedade de advogados comprometida com a defesa transparente e incansável dos direitos dos servidores públicos, trabalhadores e cidadãos do Estado do Pará.
@@ -743,7 +752,7 @@
         </div>
     </div>
 
-    <!-- Script Principal da Página de Evento -->
-    <script src="js/script.js"></script>
+    <!-- Script Principal da Página de Evento com caminho relativo explícito -->
+    <script src="./js/script.js"></script>
 </body>
 </html>
