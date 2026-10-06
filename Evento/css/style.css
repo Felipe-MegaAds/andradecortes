@@ -333,14 +333,14 @@ img {
     letter-spacing: 0.03em;
 }
 
-/* Exibe o texto completo no desktop e esconde o texto resumido */
-.btn-text-desktop {
-    display: inline;
+/* Exibe o texto completo no cabeçalho em telas desktop */
+.btn .btn-text-desktop {
+    display: inline-block;
 }
 
-/* Oculta por padrão no desktop o texto compacto de mobile */
-.btn-text-mobile {
-    display: none;
+/* Oculta no desktop o texto compacto de mobile com prioridade para não sobrescrever nem repetir as palavras */
+.btn .btn-text-mobile {
+    display: none !important;
 }
 
 /* Pulsação com Efeito Onda */
@@ -1821,13 +1821,16 @@ img {
         height: 42px;
     }
 
-    /* No cabeçalho, oculta o texto longo e mostra a versão curta e enxuta */
-    .btn-text-desktop {
+    /* No cabeçalho para telas de smartphones, oculta o texto longo e exibe apenas o texto compacto */
+    .btn-text-desktop,
+    .btn .btn-text-desktop {
         display: none !important;
     }
 
-    .btn-text-mobile {
-        display: inline !important;
+    /* Exibe o texto compacto no mobile mantendo o formato inline-block */
+    .btn-text-mobile,
+    .btn .btn-text-mobile {
+        display: inline-block !important;
     }
 
     /* Botão do cabeçalho ultra compacto para telas de smartphones */
