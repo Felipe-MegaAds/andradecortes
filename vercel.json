@@ -17,6 +17,14 @@
     {
       "source": "/palestra/",
       "destination": "/Evento/"
+    },
+    {
+      "source": "/palestra-autismo",
+      "destination": "/palestra-autismo/"
+    },
+    {
+      "source": "/palestra-autismo/",
+      "destination": "/palestra-autismo/"
     }
   ]
 }
